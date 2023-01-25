@@ -1,0 +1,32 @@
+<div class="container">
+    <form>
+     
+      
+      <div class="mb-2 col-5">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-control" [(ngModel)]="user_name" [ngModelOptions]="{standalone:true}">
+       
+      </div>
+      
+      <div class="mb-2 col-5">
+        <label class="form-label"> Your Email </label>
+        <input type="email" class="form-control" [(ngModel)]="user_email" [ngModelOptions]="{standalone:true}">
+       
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control"[(ngModel)]="date" [ngModelOptions]="{standalone:true}">
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label">Time</label>
+        <input type="text" class="form-control" [(ngModel)]="time" [ngModelOptions]="{standalone:true}">
+      </div>
+      
+      <div class="mb-3 col-5">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" [(ngModel)]="Description" [ngModelOptions]="{standalone:true}">
+      </div>
+      
+      <button type="submit" class="btn btn-primary"  (click)="save()">ADD</button>
+    </form>
+</div>

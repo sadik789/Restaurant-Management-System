@@ -1,0 +1,69 @@
+
+    
+<div class="container">
+    <form>
+        <div class="mb-2 col-2">
+            <label class="form-label"> Id</label>
+            <input type="text" class="form-control" [(ngModel)]="book_tid" [ngModelOptions]="{standalone:true}">
+           
+          </div>
+      <div class="mb-2 col-5">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-control" [(ngModel)]="user_name" [ngModelOptions]="{standalone:true}">
+       
+      </div>
+      
+      <div class="mb-2 col-5">
+        <label class="form-label"> Your Email </label>
+        <input type="email" class="form-control" [(ngModel)]="user_email" [ngModelOptions]="{standalone:true}">
+       
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control"[(ngModel)]="date" [ngModelOptions]="{standalone:true}">
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label">Time</label>
+        <input type="text" class="form-control" [(ngModel)]="time" [ngModelOptions]="{standalone:true}">
+      </div>
+      
+      <div class="mb-3 col-5">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" [(ngModel)]="Description" [ngModelOptions]="{standalone:true}">
+      </div>
+      
+      <button type="submit" class="btn btn-primary"  (click)="update(book_tid)">ADD</button>
+    </form>
+</div>
+
+<div class="container"><table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Description</th>
+        <th></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let arr of Array">
+        
+        <td>{{arr.book_tid}}</td>
+        <td>{{arr.user_name}}</td>
+        <td>{{arr.user_email}}</td>
+        <td>{{arr.date}}</td>
+        <td>{{arr.time}}</td>
+        <td>{{arr.Description}}</td>
+        <td>
+            <button class="btn btn-outline-success" (click)="put(arr)">update</button>
+            <button class="btn btn-outline-danger" (click)="delete(arr.book_tid)">delete</button>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table></div>
+

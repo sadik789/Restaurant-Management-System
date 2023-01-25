@@ -1,0 +1,86 @@
+
+<div class="container">
+    <form>
+        <div class="mb-2 col-2">
+            <label class="form-label">Id </label>
+            <input type="text" class="form-control" [(ngModel)]="cheaf_id"[ngModelOptions]="{standalone:true}">
+           
+          </div>
+      <div class="mb-2 col-5">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="cheaf_firstname" [ngModelOptions]="{standalone:true}">
+       
+      </div>
+      <div class="mb-2 col-5">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="cheaf_lastname" [ngModelOptions]="{standalone:true}">
+      </div>
+      <div class="mb-2 col-5">
+        <label class="form-label">Email </label>
+        <input type="email" class="form-control" [(ngModel)]="cheaf_email" [ngModelOptions]="{standalone:true}">
+       
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label">Address</label>
+        <input type="text" class="form-control"[(ngModel)]="cheaf_address" [ngModelOptions]="{standalone:true}">
+      </div>
+      <div class="mb-3 col-5">
+        Gender :
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="MALE" [(ngModel)]="cheaf_gender" [ngModelOptions]="{standalone:true}">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="FEMALE" [(ngModel)]="cheaf_gender" [ngModelOptions]="{standalone:true}">
+          <label class="form-check-label" for="flexRadioDefault2">
+           Female
+          </label>
+        </div>
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label">Education</label>
+        <input type="text" class="form-control" [(ngModel)]="cheaf_education" [ngModelOptions]="{standalone:true}">
+      </div>
+      
+      
+
+      <button type="submit" class="btn btn-primary"  (click)="update(cheaf_id)">Update</button>
+    </form>
+</div>
+
+
+<div class="container"><table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Address</th>
+        <th>Education</th>
+        <th>Edit</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let arr of Array">
+        
+        <td>{{arr.cheaf_id}}</td>
+        <td>{{arr.cheaf_firstname}}</td>
+        <td>{{arr.cheaf_lastname}}</td>
+        <td>{{arr.cheaf_email}}</td>
+        <td>{{arr.cheaf_gender}}</td>
+        <td>{{arr.cheaf_address}}</td>
+        <td>{{arr.cheaf_education}}</td>
+        <td>
+            <button class="btn btn-outline-success" (click)="put(arr)">update</button>
+            <button class="btn btn-outline-danger" (click)="delete(arr.cheaf_id)">delete</button>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table></div>
+
